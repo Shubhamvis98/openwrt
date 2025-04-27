@@ -95,6 +95,11 @@ platform_do_upgrade() {
 		remove_oem_ubi_volume squashfs
 		nand_do_upgrade "$1"
 		;;
+	yuncore,ax850)
+		CI_UBIPART="rootfs"
+		remove_oem_ubi_volume ubi_rootfs
+		nand_do_upgrade "$1"
+		;;
 	*)
 		default_do_upgrade "$1"
 		;;
