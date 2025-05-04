@@ -13,14 +13,14 @@
 
 	aliases {
 		serial0 = &blsp1_uart1;
-		led-boot = &led_green;
-		led-failsafe = &led_red;
-		led-running = &led_green;
-		led-upgrade = &led_blue;
+		led-boot = &led_system_blue;
+		led-failsafe = &led_system_red;
+		led-running = &led_system_blue;
+		led-upgrade = &led_system_red;
 	};
 
 	chosen {
-		bootargs-append = " root=/dev/ubiblock0_3 coherent_pool=2M";
+		bootargs-append = " root=/dev/ubiblock0_1 coherent_pool=2M";
 		stdout-path = "serial0:115200n8";
 	};
 
@@ -39,19 +39,19 @@
 	leds {
 		compatible = "gpio-leds";
 
-		led_red: system {
+		led_system_red: red {
 			color = <LED_COLOR_ID_RED>;
 			gpios = <&tlmm 26 GPIO_ACTIVE_LOW>;
 			default-status = "on";
 		};
 
-		led_green: wlan2g {
+		green {
 			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&tlmm 33 GPIO_ACTIVE_LOW>;
 			default-status = "on";
 		};
 
-		led_blue: wlan5g {
+		led_system_blue: blue {
 			color = <LED_COLOR_ID_BLUE>;
 			gpios = <&tlmm 34 GPIO_ACTIVE_LOW>;
 			default-status = "on";
