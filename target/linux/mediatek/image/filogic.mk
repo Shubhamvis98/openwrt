@@ -2244,3 +2244,57 @@ define Device/zyxel_nwa50ax-pro
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
 endef
 TARGET_DEVICES += zyxel_nwa50ax-pro
+
+define Device/indio_um-235ax-v0
+  DEVICE_VENDOR := Indio
+  DEVICE_MODEL := UM-235AX-V0
+  DEVICE_DTS := mt7981b-indio-um-235ax-v0
+  DEVICE_DTS_DIR := ../dts
+  SUPPORTED_DEVICES := indio,um-235ax-v0
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 65536k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  DEVICE_PACKAGES := kmod-mt7981-firmware kmod-mt7915e uboot-envtools -procd-ujail
+endef
+TARGET_DEVICES += indio_um-235ax-v0
+
+define Device/indio_um-235ax
+  DEVICE_VENDOR := Indio
+  DEVICE_MODEL := UM-235AX
+  DEVICE_DTS := mt7981b-indio-um-235ax
+  DEVICE_DTS_DIR := ../dts
+  SUPPORTED_DEVICES := indio,um-235ax
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 65536k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  DEVICE_PACKAGES := kmod-mt7981-firmware kmod-mt7915e uboot-envtools -procd-ujail
+endef
+TARGET_DEVICES += indio_um-235ax
+
+define Device/radisys_iap2063n
+  DEVICE_VENDOR := Radisys
+  DEVICE_MODEL := IAP2063N
+  DEVICE_DTS := mt7981b-radisys-iap2063n
+  DEVICE_DTS_DIR := ../dts
+  SUPPORTED_DEVICES := radisys,iap2063n
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 65536k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  DEVICE_PACKAGES := kmod-mt7981-firmware kmod-mt7915e uboot-envtools -procd-ujail
+endef
+TARGET_DEVICES += radisys_iap2063n

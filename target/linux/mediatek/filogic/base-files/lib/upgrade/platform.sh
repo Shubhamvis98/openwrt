@@ -129,7 +129,10 @@ platform_do_upgrade() {
 		nand_do_upgrade "$1"
 		;;
 	cudy,wr3000h-v1|\
-	cudy,wr3000p-v1)
+	cudy,wr3000p-v1|\
+	indio,um-235ax-v0|\
+	indio,um-235ax|\
+	radisys,iap2063n)
 		CI_UBIPART="ubi"
 		nand_do_upgrade "$1"
 		;;
