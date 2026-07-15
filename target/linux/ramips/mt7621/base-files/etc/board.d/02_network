@@ -77,6 +77,7 @@ ramips_setup_interfaces()
 	dna,valokuitu-plus-ex400|\
 	genexis,pulse-ex400|\
 	humax,e10|\
+	indio,um-730n|\
 	keenetic,kn-3510|\
 	meig,slt866|\
 	openfi,5pro|\

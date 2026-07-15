@@ -1619,6 +1619,16 @@ define Device/huasifei_ws1208v2
 endef
 TARGET_DEVICES += huasifei_ws1208v2
 
+define Device/indio_um-730n
+  $(Device/dsa-migration)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := Indio
+  DEVICE_MODEL := UM-730N
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 -uboot-envtools
+endef
+TARGET_DEVICES += indio_um-730n
+
 define Device/iodata_wn-ax1167gr
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
